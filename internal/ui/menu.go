@@ -4,9 +4,7 @@
 package ui
 
 import (
-	"bufio"
 	"fmt"
-	"os"
 )
 
 // DisplayWelcome shows the welcome message when the calculator starts.
@@ -48,6 +46,6 @@ func DisplayGoodbye() {
 // the menu is displayed again.
 func WaitForEnter() {
 	fmt.Print("\nPress Enter to continue...")
-	reader := bufio.NewReader(os.Stdin)
-	reader.ReadString('\n')
+	var discard string
+	fmt.Scanln(&discard)
 }
